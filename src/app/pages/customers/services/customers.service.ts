@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { CustomersModel } from "../types/customers.model";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,7 @@ export class CustomersService {
   }
 
   fetchCustomer(): Observable<CustomersModel> {
-    return this.http.get('https://v82tr0s6oa.execute-api.us-east-1.amazonaws.com/dev/') as Observable<CustomersModel>;
+    return this.http.get(`${environment.urls.mainApi}`) as Observable<CustomersModel>;
   }
-  // {"name": "Aman", "last_name": "Travis", "age": 49, "image_url": "", "is_COVID_positive": "false"}
 
 }
