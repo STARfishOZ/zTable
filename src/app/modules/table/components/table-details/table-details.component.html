@@ -1,0 +1,9 @@
+<h2>Customer Details</h2>
+<div class="wrapper">
+  <img *ngIf="data.image_url" [src]="data.image_url"/>
+  <div class="details">
+    <h3 *ngIf="data.name" class="name"><strong>Name:</strong><br> {{data.name}}</h3>
+    <h3 *ngIf="data.last_name" class="last-name"><strong>Last Name:</strong><br> {{data.last_name}}</h3>
+    <h3 *ngIf="data.age" class="age"><strong>Age:</strong><br> {{data.age}}</h3>
+  </div>
+</div>
